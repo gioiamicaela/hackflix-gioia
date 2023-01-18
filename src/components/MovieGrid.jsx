@@ -6,7 +6,7 @@ import { Spinner } from "./Spinner";
 import NoMatch from "./NoMatch";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-export default function MovieGrid({ searchText }) {
+export default function MovieGrid({ searchText, rating }) {
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
@@ -23,6 +23,15 @@ export default function MovieGrid({ searchText }) {
       setIsLoading(false);
     });
   }, [searchText, page]);
+
+  React.useEffect(() => {
+    console.log("rating", rating);
+    const result = movies.filter((movie) => {
+      return movie.vote_average >= (rating - 1) * 2;
+    });
+    setMovies([...result]);
+    console.log("movies", movies);
+  }, [rating]);
 
   if (!isLoading && movies.length === 0) {
     return <NoMatch />;

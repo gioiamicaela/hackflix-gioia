@@ -26,4 +26,13 @@ a {
 
 #basic-nav-dropdown {
   color: white;
+  background-color: #212529 !important;
+}
+
+div.dropdown-menu.show {
+  background-color: #212529 !important;
+}
+
+#nav-dropdown-search {
+  color: white;
 }

@@ -53,11 +53,12 @@ function NavBar() {
             <NavDropdown
               title={<span className="text-white my-auto">Search by</span>}
               id="basic-nav-dropdown"
+              style={{ backgroundColor: "212529" }}
             >
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="/search-rating" id="nav-dropdown-search">
                 Search by rating
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="search-title" id="nav-dropdown-search">
                 Search by title
               </NavDropdown.Item>
             </NavDropdown>
