@@ -4,6 +4,7 @@ import MovieGrid from "../components/MovieGrid";
 import { Search } from "../components/Search";
 import { useSelector } from "react-redux";
 import { useDebounce } from "../hooks/useDebounce";
+import Carousel from "../components/Carousel";
 
 function LandingPage() {
   const searchText = useSelector((state) => {
@@ -13,8 +14,9 @@ function LandingPage() {
   return (
     <div>
       <Nav />
-      <Search />
-      <MovieGrid key={debouncedSearch} searchText={debouncedSearch} />
+      {/* <Search />
+      <MovieGrid key={debouncedSearch} searchText={debouncedSearch} /> */}
+      <Carousel />
     </div>
   );
 }

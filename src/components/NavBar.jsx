@@ -37,13 +37,13 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <Nav.Link href="#home" style={{ color: "white" }}>
+            <Nav.Link href="#home" style={{ color: "rgba(255,255,255,.5)" }}>
               Home
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "white" }}>
+            <Nav.Link href="#link" style={{ color: "rgba(255,255,255,.5)" }}>
               About
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "white" }}>
+            <Nav.Link href="#link" style={{ color: "rgba(255,255,255,.5)" }}>
               Contact
             </Nav.Link>
           </Nav>
@@ -51,9 +51,12 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <NavDropdown
-              title={<span className="text-white my-auto">Search by</span>}
+              title={<span className=" my-auto">Search by</span>}
               id="basic-nav-dropdown"
-              style={{ backgroundColor: "212529" }}
+              style={{
+                backgroundColor: "212529",
+                color: "rgba(255,255,255,.5)",
+              }}
             >
               <NavDropdown.Item href="/search-rating" id="nav-dropdown-search">
                 Search by rating

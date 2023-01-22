@@ -1,8 +1,12 @@
-.star {
-  border-radius: 30px;
-}
+/* .container {
+  margin-top: 30px;
+  height: auto;
+  width: 80%;
+  padding-right: 30px;
+  padding-left: 30px;
+} */
 
-.movieTitle {
+.trendingMovieTitle {
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
   color: rgba(255, 255, 255, 0.5);
@@ -12,10 +16,6 @@
   line-height: 1.2;
 }
 
-.star:focus {
-  cursor: pointer;
-}
-
-.movieTitle:first-letter {
+.trendingMovieTitle:first-letter {
   color: #d12f26;
 }

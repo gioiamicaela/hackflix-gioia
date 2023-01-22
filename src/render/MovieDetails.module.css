@@ -18,7 +18,7 @@
 
 .movieDetails {
   font-size: 1.5rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .firstItem {

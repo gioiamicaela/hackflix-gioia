@@ -1,12 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #212529 !important;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   height: 100vh;
 }
 
@@ -17,7 +15,7 @@ code {
 
 a {
   text-decoration: none !important;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .App {
@@ -25,7 +23,7 @@ a {
 }
 
 #basic-nav-dropdown {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   background-color: #212529 !important;
 }
 
@@ -34,5 +32,9 @@ div.dropdown-menu.show {
 }
 
 #nav-dropdown-search {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  font-family: "Barlow", sans-serif;
 }

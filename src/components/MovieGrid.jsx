@@ -25,12 +25,10 @@ export default function MovieGrid({ searchText, rating }) {
   }, [searchText, page]);
 
   React.useEffect(() => {
-    console.log("rating", rating);
     const result = movies.filter((movie) => {
       return movie.vote_average >= (rating - 1) * 2;
     });
     setMovies([...result]);
-    console.log("movies", movies);
   }, [rating]);
 
   if (!isLoading && movies.length === 0) {
