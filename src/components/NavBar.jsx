@@ -37,7 +37,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <Nav.Link href="#home" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link href="/" style={{ color: "rgba(255,255,255,.5)" }}>
               Home
             </Nav.Link>
             <Nav.Link href="#link" style={{ color: "rgba(255,255,255,.5)" }}>
