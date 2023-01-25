@@ -38,3 +38,14 @@ div.dropdown-menu.show {
 * {
   font-family: "Barlow", sans-serif;
 }
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: red !important;
+  background-color: transparent !important;
+}
+
+#basic-nav-dropdown:hover {
+  color: red !important;
+  background-color: transparent !important;
+}

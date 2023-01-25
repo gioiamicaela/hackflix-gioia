@@ -37,7 +37,6 @@ export default function MovieGrid({ searchText, rating }) {
 
   return (
     <>
-      {console.log(movies)}
       {movies.length > 0 && (
         <InfiniteScroll
           dataLength={movies.length}

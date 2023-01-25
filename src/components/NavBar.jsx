@@ -10,7 +10,6 @@ function NavBar() {
     <Navbar>
       <Container>
         <Link to="/">
-          {" "}
           <Navbar.Brand
             style={{
               color: "white",

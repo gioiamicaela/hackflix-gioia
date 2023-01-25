@@ -5,10 +5,10 @@ const textSlice = createSlice({
   initialState: { value: "" },
   reducers: {
     setSearchText(state, action) {
-      state.value = action.payload;
+      state.text = action.payload;
     },
     clearSearchText(state, action) {
-      state.value = action.payload;
+      state.text = action.payload;
     },
   },
 });

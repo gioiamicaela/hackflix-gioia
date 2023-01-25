@@ -14,7 +14,7 @@ import styles from "./LandingPage.module.css";
 
 function LandingPage() {
   const searchText = useSelector((state) => {
-    return state.value;
+    return state.text.text;
   });
   const debouncedSearch = useDebounce(searchText, 300);
 

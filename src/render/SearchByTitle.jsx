@@ -7,7 +7,7 @@ import { useDebounce } from "../hooks/useDebounce";
 
 function SearchByTitle() {
   const searchText = useSelector((state) => {
-    return state.value;
+    return state.text.text;
   });
   const debouncedSearch = useDebounce(searchText, 300);
   return (

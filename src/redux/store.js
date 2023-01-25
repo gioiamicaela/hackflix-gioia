@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import textSlice from "./textSlice";
+import movieSlice from "./movieSlice";
+import { combineReducers } from "redux";
 import {
   persistStore,
   persistReducer,
@@ -12,12 +14,17 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
+const rootReducer = combineReducers({
+  text: textSlice,
+  movie: movieSlice,
+});
+
 const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, textSlice);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
