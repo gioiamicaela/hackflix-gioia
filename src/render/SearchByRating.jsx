@@ -4,22 +4,20 @@ import MovieGrid from "../components/MovieGrid";
 import Rating from "../components/Rating";
 import { useSelector } from "react-redux";
 import { useDebounce } from "../hooks/useDebounce";
+import ScrollToTop from "react-scroll-to-top";
 
 function SearchByRating() {
-  const searchText = useSelector((state) => {
-    return state.value;
-  });
-  const debouncedSearch = useDebounce(searchText, 300);
   const [rating, setRating] = React.useState(null);
 
   return (
     <div>
       <Nav />
       <Rating setRating={setRating} />
-      <MovieGrid
-        key={debouncedSearch}
-        searchText={debouncedSearch}
-        rating={rating}
+      <MovieGrid key={rating} rating={rating} />
+      <ScrollToTop
+        smooth
+        color={"black"}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
       />
     </div>
   );

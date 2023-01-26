@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import textSlice from "./textSlice";
 import movieSlice from "./movieSlice";
+import ratingSlice from "./ratingSlice";
 import { combineReducers } from "redux";
 import {
   persistStore,
@@ -17,6 +18,7 @@ import storage from "redux-persist/lib/storage";
 const rootReducer = combineReducers({
   text: textSlice,
   movie: movieSlice,
+  rating: ratingSlice,
 });
 
 const persistConfig = {

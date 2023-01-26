@@ -4,6 +4,7 @@ import MovieGrid from "../components/MovieGrid";
 import { Search } from "../components/Search";
 import { useSelector } from "react-redux";
 import { useDebounce } from "../hooks/useDebounce";
+import ScrollToTop from "react-scroll-to-top";
 
 function SearchByTitle() {
   const searchText = useSelector((state) => {
@@ -15,6 +16,11 @@ function SearchByTitle() {
       <Nav />
       <Search />
       <MovieGrid key={debouncedSearch} searchText={debouncedSearch} />
+      <ScrollToTop
+        smooth
+        color={"black"}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
+      />
     </div>
   );
 }

@@ -15,7 +15,7 @@ function NavBar() {
               color: "white",
               fontWeight: "bold",
               fontSize: "1.25rem",
-              fontFamily: "Barlow",
+              fontFamily: "Barlow, sans-serif",
             }}
             className="text-center"
           >

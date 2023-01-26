@@ -13,7 +13,7 @@ export function Search() {
   //   if (searchText) {
   //     dispatch(setSearchText(searchText));
   //   } else {
-  //     dispatch(clearSearchText());
+  //     dispatch(clearSearchText(""));
   //   }
   // }, [searchText]);
   const handleSetText = (e) => {
@@ -25,7 +25,7 @@ export function Search() {
     dispatch(setSearchText(e.target.value.toUpperCase()));
   };
   React.useEffect(() => {
-    dispatch(clearSearchText());
+    dispatch(clearSearchText(""));
   }, []);
 
   return (

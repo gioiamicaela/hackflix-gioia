@@ -1,8 +1,15 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import styles from "./Rating.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setRating, clearRating } from "../redux/ratingSlice";
 
-export default function Rating({ setRating }) {
+export default function Rating() {
+  const dispatch = useDispatch();
+  const rating = useSelector((state) => {
+    console.log(state.rating);
+    return state.rating;
+  });
   React.useEffect(() => {
     console.log("El componente se acaba de montar (primer render).");
   }, []);
@@ -30,7 +37,7 @@ export default function Rating({ setRating }) {
           <ReactStars
             classNames={styles.star}
             count={5}
-            onChange={(starsSelected) => setRating(starsSelected)}
+            onChange={(starsSelected) => dispatch(setRating(starsSelected))}
             size={50}
             emptyIcon={<i className="fas fa-star"></i>}
             fullIcon={<i className="fa fa-star"></i>}
