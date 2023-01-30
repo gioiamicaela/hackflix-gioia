@@ -1,6 +1,16 @@
 .detailsContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #212529;
+}
+
+.detailsContainerMax {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   background-color: #212529;
 }

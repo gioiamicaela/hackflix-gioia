@@ -49,3 +49,21 @@ div.dropdown-menu.show {
   color: red !important;
   background-color: transparent !important;
 }
+
+.navbar-toggler-icon {
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.1);
+  filter: invert(100%);
+}
+
+/* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: white;
+  opacity: 1;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+  background-color: white;
+  opacity: 1;
+}

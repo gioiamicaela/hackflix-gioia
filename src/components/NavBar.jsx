@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar>
+    <Navbar expand="lg">
       <Container>
         <Link to="/">
           <Navbar.Brand
@@ -35,7 +35,7 @@ function NavBar() {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+          <Nav className="me-auto">
             <Nav.Link href="/" style={{ color: "rgba(255,255,255,.5)" }}>
               Home
             </Nav.Link>

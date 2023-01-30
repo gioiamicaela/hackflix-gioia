@@ -8,3 +8,12 @@ export function get(path) {
     },
   }).then((result) => result.json());
 }
+
+export function getGenre(path) {
+  return fetch(API + path, {
+    headers: {
+      Authorization: "Bearer " + TOKEN,
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  }).then((result) => result.json());
+}

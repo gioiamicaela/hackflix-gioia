@@ -1,0 +1,16 @@
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.movieCard:hover {
+  opacity: 0.8;
+}
+
+.movieImage {
+  border-radius: 10px;
+  background-color: azure;
+}

@@ -28,28 +28,30 @@ function MovieDisplay() {
   return (
     <div>
       <NavBar />
-      {isLoading && <Spinner />}
-      {movie && (
-        <div className={styles.detailsContainer}>
-          <img
-            src={imageURL}
-            alt=""
-            className={`${styles.col} ${styles.movieImage} `}
-          />
-          <div className={`${styles.col} ${styles.movieDetails} `}>
-            <p className={styles.firstItem}>
-              <strong>Title:</strong> {movie.title}
-            </p>
-            <p>
-              <strong>Genres:</strong>{" "}
-              {movie.genres.map((genre) => genre.name).join(", ")}
-            </p>
-            <p>
-              <strong>Description:</strong> {movie.overview}
-            </p>
+      <div className={styles.detailsContainerMax}>
+        {isLoading && <Spinner />}
+        {movie && (
+          <div className={styles.detailsContainer}>
+            <img
+              src={imageURL}
+              alt=""
+              className={`${styles.col} ${styles.movieImage} `}
+            />
+            <div className={`${styles.col} ${styles.movieDetails} `}>
+              <p className={styles.firstItem}>
+                <strong>Title:</strong> {movie.title}
+              </p>
+              <p>
+                <strong>Genres:</strong>{" "}
+                {movie.genres.map((genre) => genre.name).join(", ")}
+              </p>
+              <p>
+                <strong>Description:</strong> {movie.overview}
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
