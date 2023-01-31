@@ -51,12 +51,12 @@ function MovieDisplay() {
             </h2>
             <hr className="text-white" style={{ height: "2px" }}></hr>
             <div className="row">
-              <div className="col-6">
+              <div className="col-md-6">
                 <p className="fw-bold text-white mb-0">OVERVIEW</p>
                 <p className="fw-light text-white">{movie.overview}</p>
               </div>
 
-              <div className="col-6">
+              <div className="col-md-6">
                 <div className="row">
                   <div className="col-12">
                     <p className="fw-bold text-white mb-0 mt-2">GENRES</p>
@@ -68,11 +68,11 @@ function MovieDisplay() {
                       );
                     })}
                   </div>
-                  <div className="col-6">
+                  <div className="col-sm-6">
                     <p className="fw-bold text-white mb-0 mt-2">RELEASE DATE</p>
                     <p className="fw-light text-white">{movie.release_date}</p>
                   </div>
-                  <div className="col-6">
+                  <div className="col-sm-6">
                     <p className="fw-bold text-white mb-0 mt-2">RATING</p>
                     <p className="fw-light text-white">
                       {movie.vote_average}/10
