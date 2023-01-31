@@ -1,3 +1,8 @@
+* {
+  font-family: "Barlow", sans-serif;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Barlow", sans-serif;
@@ -8,10 +13,10 @@ body {
   height: 100vh;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 a {
   text-decoration: none !important;
@@ -33,10 +38,6 @@ div.dropdown-menu.show {
 
 #nav-dropdown-search {
   color: rgba(255, 255, 255, 0.5);
-}
-
-* {
-  font-family: "Barlow", sans-serif;
 }
 
 .dropdown-item:focus,
@@ -66,4 +67,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .swiper-pagination-bullet {
   background-color: white;
   opacity: 1;
+}
+
+.minHeightContainer {
+  min-height: 75vh;
 }

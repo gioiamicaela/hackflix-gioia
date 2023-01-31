@@ -4,6 +4,7 @@
   gap: 40px;
   padding: 40px;
   justify-content: center;
+  column-gap: 15px;
 }
 
 .movieCard:hover {

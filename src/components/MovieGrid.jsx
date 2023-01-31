@@ -43,24 +43,29 @@ export default function MovieGrid({ searchText, rating }) {
 
   return (
     <>
-      {movies.length > 0 && (
-        <InfiniteScroll
-          dataLength={movies.length}
-          hasMore={hasMore}
-          next={() => setPage((prevPage) => prevPage + 1)}
-          loader={<Spinner />}
-        >
-          <ul className={styles.movieGrid}>
-            {movies.map((movie) => {
-              return (
-                <li style={{ listStyle: "none" }} className={styles.movieCard}>
-                  <MovieCard key={movie.id} movie={movie} />;
-                </li>
-              );
-            })}
-          </ul>
-        </InfiniteScroll>
-      )}
+      <div className="container px-0 minHeightContainer">
+        {movies.length > 0 && (
+          <InfiniteScroll
+            dataLength={movies.length}
+            hasMore={hasMore}
+            next={() => setPage((prevPage) => prevPage + 1)}
+            loader={<Spinner />}
+          >
+            <ul className={styles.movieGrid}>
+              {movies.map((movie) => {
+                return (
+                  <li
+                    style={{ listStyle: "none" }}
+                    className={styles.movieCard}
+                  >
+                    <MovieCard key={movie.id} movie={movie} />;
+                  </li>
+                );
+              })}
+            </ul>
+          </InfiniteScroll>
+        )}
+      </div>
     </>
   );
 }

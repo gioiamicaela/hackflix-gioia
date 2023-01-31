@@ -39,10 +39,10 @@ function NavBar() {
             <Nav.Link href="/" style={{ color: "rgba(255,255,255,.5)" }}>
               Home
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link href="/about" style={{ color: "rgba(255,255,255,.5)" }}>
               About
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link href="/contact" style={{ color: "rgba(255,255,255,.5)" }}>
               Contact
             </Nav.Link>
           </Nav>

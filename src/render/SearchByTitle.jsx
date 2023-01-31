@@ -16,6 +16,7 @@ function SearchByTitle() {
       <Nav />
       <Search />
       <MovieGrid key={debouncedSearch} searchText={debouncedSearch} />
+
       <ScrollToTop
         smooth
         color={"black"}
