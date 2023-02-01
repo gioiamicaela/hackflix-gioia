@@ -39,7 +39,7 @@ function CarouselComponent() {
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
-                  height: "75vh",
+                  maxHeight: "75vh",
                   overflow: "hidden",
                   borderRadius: "1.5rem",
                   filter: "brightness(.5)",

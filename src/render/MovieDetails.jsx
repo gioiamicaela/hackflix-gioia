@@ -29,60 +29,69 @@ function MovieDisplay() {
     <div>
       <NavBar />
       {/* className sería .detailsContainerMax  */}
-      <div className="container px-5">
-        {isLoading && <Spinner />}
-        {movie && (
-          <div
-            className="w-100 d-flex flex-column justify-content-end p-4 mt-5"
-            style={{
-              height: "75vh",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              padding: "3rem",
-              marginTop: "1.5rem",
-              borderRadius: "1.5rem",
-              backgroundPosition: "center",
-              background: `linear-gradient(transparent 20%, rgba(25, 27, 31, 0.467) 50%,
+      <div className="container  px-5">
+        <div className="row">
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+            {movie && (
+              <div
+                className="w-100 d-flex flex-column justify-content-end p-4 mt-5"
+                style={{
+                  height: "75vh",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  padding: "3rem",
+                  marginTop: "1.5rem",
+                  borderRadius: "1.5rem",
+                  backgroundPosition: "center",
+                  maxWidth: "500px",
+                  background: `linear-gradient(transparent 20%, rgba(25, 27, 31, 0.467) 50%,
               rgba(25, 27, 31, 0.933)), url(${imageURL})`,
-            }}
-          >
-            <h2 className="text-white fw-bold text-uppercase mb-0">
-              {movie.title}
-            </h2>
-            <hr className="text-white" style={{ height: "2px" }}></hr>
-            <div className="row">
-              <div className="col-md-6">
-                <p className="fw-bold text-white mb-0">OVERVIEW</p>
-                <p className="fw-light text-white">{movie.overview}</p>
-              </div>
-
-              <div className="col-md-6">
+                }}
+              >
+                <h2 className="text-white fw-bold text-uppercase mb-0">
+                  {movie.title}
+                </h2>
+                <hr className="text-white" style={{ height: "2px" }}></hr>
                 <div className="row">
-                  <div className="col-12">
-                    <p className="fw-bold text-white mb-0 mt-2">GENRES</p>
-                    {movie.genres.map((item) => {
-                      return (
-                        <p className="fw-light text-white d-inline me-2">
-                          {item.name} -
+                  <div className="col-md-6">
+                    <p className="fw-bold text-white mb-0">OVERVIEW</p>
+                    <p className="fw-light text-white">{movie.overview}</p>
+                  </div>
+
+                  <div className="col-md-6">
+                    <div className="row">
+                      <div className="col-12">
+                        <p className="fw-bold text-white mb-0 mt-2">GENRES</p>
+                        {movie.genres.map((item) => {
+                          return (
+                            <p className="fw-light text-white d-inline me-2">
+                              {item.name}
+                            </p>
+                          );
+                        })}
+                      </div>
+                      <div className="col-sm-6">
+                        <p className="fw-bold text-white mb-0 mt-2">
+                          RELEASE DATE
                         </p>
-                      );
-                    })}
-                  </div>
-                  <div className="col-sm-6">
-                    <p className="fw-bold text-white mb-0 mt-2">RELEASE DATE</p>
-                    <p className="fw-light text-white">{movie.release_date}</p>
-                  </div>
-                  <div className="col-sm-6">
-                    <p className="fw-bold text-white mb-0 mt-2">RATING</p>
-                    <p className="fw-light text-white">
-                      {movie.vote_average}/10
-                    </p>
+                        <p className="fw-light text-white">
+                          {movie.release_date}
+                        </p>
+                      </div>
+                      <div className="col-sm-6">
+                        <p className="fw-bold text-white mb-0 mt-2">RATING</p>
+                        <p className="fw-light text-white">
+                          {movie.vote_average}/10
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
-        )}
+        </div>
+        {isLoading && <Spinner />}
 
         {/* {movie && (
           <div className={styles.detailsContainer}>
