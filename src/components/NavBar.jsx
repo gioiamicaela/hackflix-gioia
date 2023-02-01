@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" sticky="top">
       <Container>
         <Link to="/">
           <Navbar.Brand
@@ -36,13 +36,25 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link
+              as={Link}
+              to={"/"}
+              style={{ color: "rgba(255,255,255,.5)" }}
+            >
               Home
             </Nav.Link>
-            <Nav.Link href="/about" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link
+              as={Link}
+              to={"/about"}
+              style={{ color: "rgba(255,255,255,.5)" }}
+            >
               About
             </Nav.Link>
-            <Nav.Link href="/contact" style={{ color: "rgba(255,255,255,.5)" }}>
+            <Nav.Link
+              as={Link}
+              to={"/contact"}
+              style={{ color: "rgba(255,255,255,.5)" }}
+            >
               Contact
             </Nav.Link>
           </Nav>
@@ -57,10 +69,18 @@ function NavBar() {
                 color: "rgba(255,255,255,.5)",
               }}
             >
-              <NavDropdown.Item href="/search-rating" id="nav-dropdown-search">
+              <NavDropdown.Item
+                as={Link}
+                to={"/search-rating"}
+                id="nav-dropdown-search"
+              >
                 Search by rating
               </NavDropdown.Item>
-              <NavDropdown.Item href="search-title" id="nav-dropdown-search">
+              <NavDropdown.Item
+                as={Link}
+                to={"/search-title"}
+                id="nav-dropdown-search"
+              >
                 Search by title
               </NavDropdown.Item>
             </NavDropdown>

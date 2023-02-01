@@ -39,7 +39,7 @@ function LandingPage() {
       <Nav />
       <Carousel />
 
-      <div className="container mt-5 pb-5">
+      <div className="container  mt-5 pb-5">
         <h2 className={styles.genre}>ACTION</h2>
         <hr className="mb-4 text-white-50"></hr>
         <Swiper list={actionList}></Swiper>
