@@ -14,33 +14,19 @@ export default function MovieGrid({ searchText, rating }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
   const [hasMore, setHasMore] = React.useState(true);
-  const dispatch = useDispatch();
-  const movieList = useSelector((state) => {
-    return state.movie.movie;
-  });
   React.useEffect(() => {
+    console.log(rating);
     setIsLoading(true);
-    const searchUrl = searchText
-      ? "/search/movie?query=" + searchText + "&page=" + page
-      : "/discover/movie?page=" + page;
+    const min = (rating - 1) * 2;
+    const max = rating * 2;
+    const searchUrl =
+      `&vote_average.gte=${min}&vote_average.lte=${max}}` + page;
     get(searchUrl).then((data) => {
       setMovies((prevMovies) => prevMovies.concat(data.results));
       setHasMore(data.page < data.total_pages);
       setIsLoading(false);
     });
-  }, [searchText, page]);
-
-  // React.useEffect(() => {
-  //   console.log("rating", rating);
-  //   const result = movies.filter((movie) => {
-  //     console.log(movie.vote_average);
-  //     return (
-  //       movie.vote_average >= (rating - 1) * 2 &&
-  //       movie.vote_average < rating * 2
-  //     );
-  //   });
-  //   setMovies([...result]);
-  // }, [rating]);
+  }, [page, rating]);
 
   React.useEffect(() => {
     console.log("movies", movies);
