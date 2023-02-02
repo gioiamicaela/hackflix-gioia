@@ -6,7 +6,7 @@ import { get } from "../utils/httpClient";
 import { Spinner } from "../components/Spinner";
 import { getMovieImg } from "../utils/getMovieImg";
 
-function MovieDisplay() {
+function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -62,9 +62,12 @@ function MovieDisplay() {
                     <div className="row">
                       <div className="col-12">
                         <p className="fw-bold text-white mb-0 mt-2">GENRES</p>
-                        {movie.genres.map((item) => {
+                        {movie.genres.map((item, index) => {
                           return (
-                            <p className="fw-light text-white d-inline me-2">
+                            <p
+                              className="fw-light text-white d-inline me-2"
+                              key={index}
+                            >
                               {item.name}
                             </p>
                           );
@@ -122,4 +125,4 @@ function MovieDisplay() {
   );
 }
 
-export default MovieDisplay;
+export default MovieDetails;
