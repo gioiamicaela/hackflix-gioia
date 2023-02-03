@@ -14,9 +14,9 @@ export default function MovieGridForRaiting({ searchText, rating }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
   const [hasMore, setHasMore] = React.useState(true);
+
   React.useEffect(() => {
     const api_key = process.env.REACT_APP_KEY;
-    console.log("rating", rating);
     setIsLoading(true);
     if (rating >= 1) {
       const min = (rating - 1) * 2;
@@ -25,21 +25,16 @@ export default function MovieGridForRaiting({ searchText, rating }) {
         `/discover/movie?${api_key}&vote_average.gte=${min}&vote_average.lte=${max}&page=` +
         page;
       get(searchUrl).then((data) => {
-        console.log("results", data.results);
-        setMovies((prevMovies) => prevMovies.concat(data.results));
-        // const moviesFiltered = movies.filter(
-        //   (movie) => movie.vote_average !== max
-        // );
-        // setMovies(moviesFiltered);
+        setMovies((prevMovies) =>
+          prevMovies.concat(
+            data.results.filter((movie) => movie.vote_average !== min)
+          )
+        );
         setHasMore(data.page < data.total_pages);
         setIsLoading(false);
       });
     }
   }, [page, rating]);
-
-  React.useEffect(() => {
-    console.log("movies", movies);
-  }, [movies]);
 
   if (!isLoading && movies.length === 0) {
     return <NoMatch />;
