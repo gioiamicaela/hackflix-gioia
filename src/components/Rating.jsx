@@ -1,8 +1,6 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import styles from "./Rating.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { setRating, clearRating } from "../redux/ratingSlice";
 
 export default function Rating({ setRating }) {
   return (
@@ -18,7 +16,7 @@ export default function Rating({ setRating }) {
               margin: "0",
             }}
           >
-            Filter by raiting
+            Select raiting
           </p>
           <span></span>
         </div>

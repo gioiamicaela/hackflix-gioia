@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" sticky="top">
+    <Navbar expand="lg">
       <Container>
         <Link to="/">
           <Navbar.Brand

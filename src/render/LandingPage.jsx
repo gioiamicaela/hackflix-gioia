@@ -35,7 +35,7 @@ function LandingPage() {
     });
   }, []);
   return (
-    <div>
+    <>
       <Nav />
       <Carousel />
 
@@ -64,7 +64,7 @@ function LandingPage() {
           style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
         />
       </div>
-    </div>
+    </>
   );
 }
 

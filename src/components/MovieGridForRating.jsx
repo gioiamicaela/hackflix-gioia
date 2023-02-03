@@ -5,11 +5,8 @@ import styles from "./MovieGrid.module.css";
 import { Spinner } from "./Spinner";
 import NoMatch from "./NoMatch";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useSelector, useDispatch } from "react-redux";
-import { addMovie } from "../redux/movieSlice";
-import { clearSearchText } from "../redux/textSlice";
 
-export default function MovieGridForRaiting({ searchText, rating }) {
+export default function MovieGridForRaiting({ rating }) {
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
