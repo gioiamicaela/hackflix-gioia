@@ -28,7 +28,7 @@ function CarouselComponent() {
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
-          style={{ width: "40vw", margin: "auto" }}
+          className={styles.carouselSize}
         >
           {trendingMovies.map((movie) => {
             return (
@@ -45,6 +45,7 @@ function CarouselComponent() {
                       borderRadius: "1.5rem",
                       filter: "brightness(.5)",
                       overflow: "hidden",
+                      opacity: "0.75",
                     }}
                   />
                 </Link>
