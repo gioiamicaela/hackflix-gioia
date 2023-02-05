@@ -10,6 +10,7 @@ function SearchByTitle() {
   const searchText = useSelector((state) => {
     return state.text.text;
   });
+
   const debouncedSearch = useDebounce(searchText, 300);
   return (
     <div>

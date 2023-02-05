@@ -5,19 +5,13 @@ import styles from "./MovieGrid.module.css";
 import { Spinner } from "./Spinner";
 import NoMatch from "./NoMatch";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useSelector, useDispatch } from "react-redux";
-import { addMovie } from "../redux/movieSlice";
-import { clearSearchText } from "../redux/textSlice";
 
-export default function MovieGrid({ searchText, rating }) {
+export default function MovieGrid({ searchText }) {
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
   const [hasMore, setHasMore] = React.useState(true);
-  const dispatch = useDispatch();
-  const movieList = useSelector((state) => {
-    return state.movie.movie;
-  });
+
   React.useEffect(() => {
     setIsLoading(true);
     const searchUrl = searchText
@@ -29,22 +23,6 @@ export default function MovieGrid({ searchText, rating }) {
       setIsLoading(false);
     });
   }, [searchText, page]);
-
-  // React.useEffect(() => {
-  //   console.log("rating", rating);
-  //   const result = movies.filter((movie) => {
-  //     console.log(movie.vote_average);
-  //     return (
-  //       movie.vote_average >= (rating - 1) * 2 &&
-  //       movie.vote_average < rating * 2
-  //     );
-  //   });
-  //   setMovies([...result]);
-  // }, [rating]);
-
-  React.useEffect(() => {
-    console.log("movies", movies);
-  }, [movies]);
 
   if (!isLoading && movies.length === 0) {
     return <NoMatch />;
@@ -61,11 +39,12 @@ export default function MovieGrid({ searchText, rating }) {
             loader={<Spinner />}
           >
             <ul className={styles.movieGrid}>
-              {movies.map((movie) => {
+              {movies.map((movie, index) => {
                 return (
                   <li
                     style={{ listStyle: "none" }}
                     className={styles.movieCard}
+                    key={index}
                   >
                     <MovieCard key={movie.id} movie={movie} />;
                   </li>

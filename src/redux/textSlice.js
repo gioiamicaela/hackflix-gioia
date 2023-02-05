@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const textSlice = createSlice({
   name: "text",
-  initialState: { value: "" },
+  initialState: {},
   reducers: {
     setSearchText(state, action) {
       state.text = action.payload;

@@ -1,9 +1,6 @@
 import React from "react";
 import Nav from "../components/NavBar";
-import MovieGrid from "../components/MovieGrid";
 import Rating from "../components/Rating";
-import { useSelector } from "react-redux";
-import { useDebounce } from "../hooks/useDebounce";
 import ScrollToTop from "react-scroll-to-top";
 import MovieGridForRating from "../components/MovieGridForRating";
 

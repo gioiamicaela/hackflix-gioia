@@ -30,11 +30,11 @@ function SwiperComponent({ list }) {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {list.map((movie) => {
+            {list.map((movie, index) => {
               const imageURL = getMovieImg(movie.poster_path, 300);
               return (
                 <>
-                  <SwiperSlide className={styles.movieGrid}>
+                  <SwiperSlide className={styles.movieGrid} key={index}>
                     <Link to={"/" + movie.id}>
                       <img
                         src={imageURL}

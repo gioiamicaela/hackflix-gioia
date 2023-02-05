@@ -30,9 +30,9 @@ function CarouselComponent() {
           onSelect={handleSelect}
           className={styles.carouselSize}
         >
-          {trendingMovies.map((movie) => {
+          {trendingMovies.map((movie, index) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={index}>
                 <Link to={"/" + movie.id}>
                   <img
                     className="d-block w-100"
